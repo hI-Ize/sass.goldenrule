@@ -1,0 +1,34 @@
+//prolly should start w smallest unit
+//$f: 70px;
+$f: 100vmax;
+
+$fsq: get-fsq((.1, 1000), $f);
+
+//@debug $fsq;
+
+$pixels:();
+//$pixels:(
+//	font: (16px, 21px, 26px, 30px, 50px, 70px),
+//	mp: (5px, 15px , 25px, 40px, 105px, 115px, 275px),
+//	s: (40, 70, 113, 180, 290, 470),
+//	ico: (10, 20, 40, 50, 100)
+//);
+
+$units:(
+	font: 	(nth($fsq, 4),	nth($fsq, 5), nth($fsq, 6),	nth($fsq, 7), 	nth($fsq, 8), 	nth($fsq, 9)),
+	mp: 	(nth($fsq, 4),  nth($fsq, 5), nth($fsq, 6), nth($fsq, 7),	nth($fsq, 8),   nth($fsq, 9),	nth($fsq, 10),  nth($fsq, 11)),
+	s: 		(nth($fsq, 8),  nth($fsq, 9), nth($fsq, 10),nth($fsq, 11),  nth($fsq, 12),  nth($fsq, 13)),
+	ico: 	(nth($fsq, 5),  nth($fsq, 6),  nth($fsq, 7), 	nth($fsq, 8), nth($fsq, 9), nth($fsq, 10),  nth($fsq, 11))
+);
+
+//@debug $units;
+//
+//
+//
+//@each $branch, $vals  in $pixels{
+//	$new_vals:($branch: remove-duplicates(fibonize($vals, $f)));
+//	$pixels: map-remove($pixels, $branch);
+//	$pixels: map-merge($pixels, $new_vals);
+//}
+
+

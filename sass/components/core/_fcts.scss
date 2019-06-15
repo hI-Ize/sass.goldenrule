@@ -1,0 +1,264 @@
+@import '../vendor/pow_float';
+@import '../vendor/contains';
+@import "../vendor/mathsass-master/dist/math";
+
+@function f($item:1, $i:1){
+	$list: $fsq;
+
+	@if is-integer($item) {
+		$i: $item;
+	}@else if(exists($units, $item)){
+		$list: map-get($units, $item);
+	}
+
+	$list-l: length($list);
+
+	@if ($i <= $list-l){
+		@return nth($list, $i);
+	}
+
+	@warn 'f out of reach';
+	@return nth($list, $list-l);
+}
+
+@function color($prefix:'l', $i: 1) {
+	$color: red;
+
+
+	@if ($prefix == 'd') {
+		$prefix: 'dark';
+	} @else
+	if ($prefix == 'l') {
+		$prefix: 'light';
+	} @else
+	if ($prefix == 'c') {
+		$prefix: 'contrast';
+	}
+
+	@if (exists($colors, $prefix)) {
+
+		$color: map-get($colors, $prefix);
+		// @debug (is-integer($i));
+		// and nth($color, $i));
+
+		@if(exists($color, $i)) {
+			// @debug nth($color, $i);
+
+			$color: nth($color, $i);
+
+		} @else {
+			$color: last($color);
+		}
+	}@else{
+		@warn 'no such color!';
+	}
+
+	@return $color;
+}
+// #list============================================
+@function first($list) {
+	@return nth($list, 1);
+}
+@function last($list) {
+	@return nth($list, length($list));
+}
+//todo: use else than lists
+//check if index/key present in list
+@function exists($list, $i) {
+
+	@if((is-integer($i) and length($list) >= $i) or (not(is-integer($i)) and map-get($list, $i))) {
+		@return true;
+	}
+	@return false;
+}
+//list be numeric
+@function nearest($list, $x) {
+	$cd: abs($x - nth($list, 1));
+	$closest: nth($list, 1);
+	@for $i from 2 to length($list) {
+		$d: abs($x - nth($list, $i));
+		@if ($cd > $d) {
+			$closest: nth($list, $i);
+			$cd: $d;
+		}
+	}
+	@return $closest;
+}
+@function remove-duplicates($list, $recursive: false) {
+	$result: ();
+	@each $item in $list {
+		@if not index($result, $item) {
+			@if length($item) > 1 and $recursive {
+				$result: append($result, remove-duplicates($item, $recursive));
+			} @else {
+				$result: append($result, $item);
+			}
+		}
+	}
+	@return $result;
+}
+@function list-sort($list) {
+	$sortedlist: ();
+	@while length($list) > 0 {
+		$value: nth($list,1);
+		@each $item in $list {
+			@if $item < $value {
+				$value: $item;
+			}
+		}
+		$sortedlist: append($sortedlist, $value, 'space');
+		// $list: list-remove($list, index($list, $value));
+		$list: nth-delete($list, index($list, $value));
+	}
+	@return $sortedlist;
+}
+@function nth-delete($list, $n) {
+	$result: ();
+	$n: if($n < 0, length($list) + $n + 1, $n);
+	$bracketed: is-bracketed($list);
+	$separator: list-separator($list);
+	@for $i from 1 through length($list) {
+		@if $i != $n {
+			$result: append($result, nth($list, $i));
+		}
+	}
+	@return join((), $result, $separator, $bracketed);
+}
+// #int #numbers============================================
+@function is-number($value) {
+	@return type-of($value) == 'number';
+}
+@function is-integer($value) {
+	@return is-number($value) and rnd($value) == $value;
+}
+@function pow($number, $exponent) {
+	$value: 1;
+	@if $exponent > 0 {
+		@for $i from 1 through $exponent {
+			$value: $value * $number;
+		}
+	}
+	@return $value;
+}
+@function rnd($num, $decimals:0, $to: null) {
+	$decimals: pow(10, $decimals);
+	$num: round($num * $decimals);
+
+	@if(is-number($to)){
+
+	}
+
+	@return $num / $decimals;
+}
+@function number($value) {
+  @if type-of($value) == 'number' {
+    @return $value;
+  } @else if type-of($value) != 'string' {
+    $_: log('Value for `to-number` should be a number or a string.');
+  }
+
+  $result: 0;
+  $digits: 0;
+  $minus: str-slice($value, 1, 1) == '-';
+  $numbers: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9);
+
+  @for $i from if($minus, 2, 1) through str-length($value) {
+    $character: str-slice($value, $i, $i);
+
+    @if not (index(map-keys($numbers), $character) or $character == '.') {
+      @return to-length(if($minus, -$result, $result), str-slice($value, $i))
+    }
+
+    @if $character == '.' {
+      $digits: 1;
+    } @else if $digits == 0 {
+      $result: $result * 10 + map-get($numbers, $character);
+    } @else {
+      $digits: $digits * 10;
+      $result: $result + map-get($numbers, $character) / $digits;
+    }
+  }
+
+  @return if($minus, -$result, $result);;
+}
+@function round_last_dec($x){
+	$str: $x + '';
+
+	@if str-index($str, '.') {
+		$str_length: str-length($str);
+		$last_char: number(str-slice($str, $str-length));
+
+		@if (($last_char < 3) or ($last_char > 7)) {
+			$x: round($x);
+		}@else{
+			$last_char: 5;
+			$str: str-slice($str, 1, $str-length - 1) + 5;
+			$x: number($str);
+		}
+	}
+
+	@return $x;
+}
+//#fool=====================================================
+//#fib
+@function get-fsq($interval, $f) {
+	$prev: $f;
+	$fs: ($f);
+	$overflow: -1;
+	$n: -1;
+	$lim: nth($interval, 1);
+
+	@while ($overflow < 2) {
+		$fx: fibon($f, $n, 2);
+		@if ($overflow == -1 and $fx < $lim) or ($overflow == 1 and $fx > $lim) {
+			$overflow: $overflow + 2;
+			$lim: nth($interval, 2);
+			$n: 1;
+			$prev: $f;
+			// $prev: fibon($f, 1);
+		} @else {
+			$fs: append($fs, $fx);
+			$n: (abs($n) + 1) * $overflow;
+			$prev: $fx;
+		}
+	}
+	@return list-sort($fs);
+}
+
+@function fibonize($targets, $f) {
+	$sq: ();
+
+	@each $target in $targets{
+		$val: log($target/$f, 1.618);
+		$val: rnd($val, 1);
+		$val: round_last_dec($val);
+
+		$sq: append($sq, fibon($f, $val));
+
+	}
+
+	@return $sq;
+}
+
+@function fibon($x: 100, $steps:0, $decimals: 2) {
+	$m: 1.618;
+	@if $steps < 0 {
+		$m: 1/$m;
+	} @else
+	if $steps == 0 {
+		@return rnd($x, $decimals);
+	}
+	// @return rnd($x * pow($m, abs($steps)), $decimals);
+	@return rnd($x * math-pow($m, abs($steps)), $decimals);
+}
+//#fool=====================================================
+
+//#style=======================================================================
+@function shade($color, $percent) {
+	@if not _is-color($color) {
+		@error "`#{$color}` is not a valid color for the `$color` argument in " + "the `shade`mixin.";
+	} @else {
+		@return mix(#000, $color, $percent);
+	}
+}
+//#style=======================================================================

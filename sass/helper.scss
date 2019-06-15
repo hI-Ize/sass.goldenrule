@@ -1,0 +1,621 @@
+@charset "utf-8";
+//DOCS http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+@import "components/core/vars";
+@import "components/core/fcts";
+@import "components/core/spacing";
+@import "components/core/mixins";
+
+
+
+
+
+
+.ff-a{ font-family: $ff-a; }
+.ff-b{ font-family: $ff-b; }
+.fs{
+	$list: map-get($units, font);
+
+	@for $i from 1 through length($list){
+		&#{$i}{
+			font-size: f(font, $i);
+			line-height: f(font, $i) + f();
+			letter-spacing: fibon(f(), -$i);
+		}
+	}
+}
+
+.fs5{
+	@include resp((
+		font-size: (70px, f(8))
+	))
+}
+.bold{
+	font-weight: bold;
+
+	&er{
+		font-weight: bolder;
+	}
+	&est{
+		font-weight: 900;
+	}
+}
+
+img.obj-fit-c{
+	object-fit: cover;
+	object-position: center;
+}
+button,
+.btn{
+	color: color(d);
+	font-family: $ff-a;
+	font-size: f(font, 2);
+	padding: f(mp, 2) f(mp, 3);
+	cursor: pointer;
+	&.sm{
+		padding: f(mp, 1) f(mp, 2);
+
+	}
+}
+
+
+
+
+
+ul.indent-lines{
+	text-indent: - f(7);
+	padding-left: f(7);
+}
+//#budget #icos
+
+.tri-u{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 13px 14px 13px;
+	border-color: transparent transparent #989ca0 transparent;
+}
+
+.tri-b{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 14px 13px 0 13px;
+	border-color: #989ca0 transparent transparent transparent;
+}
+.tri-l{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 13px 14px 13px 0;
+	border-color: transparent #989ca0 transparent transparent;
+}
+.tri-r{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 13px 0 13px 14px;
+	border-color: transparent transparent transparent #989ca0;
+}
+.tri-point-u::after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+
+	border-width: 0 18px 13px 7px;
+	border-color: transparent transparent color(c) transparent;
+	right: fibon(100%, -1);
+	bottom:100%;
+}
+.tri-point-d::after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 12px 0 6px;
+	// border-width: 13px 18px 0 7px;
+	border-color:color(c) transparent transparent transparent;
+	left: fibon(100%, -1);
+	top:100%;
+
+}
+
+
+//.tri-slant-container
+.diagonal-top{
+	position: relative;
+	&::before{
+		content: "";
+			position: absolute;
+			z-index: -1;
+			bottom: 100%;
+			border-style: solid;
+			height: 0;
+			width: 0;
+			border-color: transparent transparent transparent #313941;
+			border-width: 300px 0 0 100vw;
+	}
+}
+
+.r{
+	border-radius: 100%;
+}
+
+.ico{
+	$_sizes: map-get($units, ico);
+
+	@for $i from 1 through length($_sizes){
+		$s: f(ico, $i);
+
+		&-s#{$i}
+		{
+			text-align: center;
+			width: $s;
+			height: $s;
+			line-height: $s;
+			display: inline-block;
+
+			> path{
+				display:inline-block;
+				width: round($s/$i);
+				height: round($s/$i);
+				// height: round($s/3);
+				// height: $s;
+				//fill: color(l, 6);
+			}
+		}
+
+	}
+
+
+
+
+	// > svg{
+	// 	display: inline-block;
+	// 	width:nth($f-sq,  6);
+	// 	max-height:nth($f-sq,  6);
+	// 	fill:nth($c-light, 1);
+	// }
+	//
+	// &-s1 > svg{
+	// 	width: nth($f-sq, 5);
+	// 	fill:nth($c-light, 1);
+	// 	display: inline-block;
+	// }
+	// &-s2 > svg{
+	//
+	//
+	// }
+}
+
+
+div.def{
+	width: 100px;
+	height: 100px;
+}
+
+
+// #borders
+.bor{
+	&-a{border: 2px solid rgba(color(d), 1);}
+
+	border: solid rgba(0, 0, 0, 0.4);
+
+	&.lumen{
+		box-sizing: border-box;
+		border: 1px solid #66afe9;
+		outline: 0;
+		border: 1px solid #66afe9;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+	}
+	&.light{border:solid 1px rgba(0, 0, 0, 0.1);}
+
+	&.rad-5{
+		border-radius: 5px;
+	}
+
+	&.b{border-bottom: 1px solid;}
+	&.l{border-left: 1px solid;}
+	&.r{border-right: 1px solid;}
+	&.t{border-top: 1px solid;}
+
+}
+
+
+
+// #tweaks
+.mirror{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+
+/*#bg*/
+
+%bg{
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.bg{
+	&-cover{
+		@extend %bg;
+		background-size:cover;
+	}
+	&-contain{
+		@extend %bg;
+		background-size:contain;
+	}
+	&-fixed{
+		@extend %bg;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+
+	&-rad-grad{
+	    background: -webkit-radial-gradient(circle, #094E8F, #0C122A);
+	    background: -o-radial-gradient(circle, #094E8F, #0C122A);
+	    background: -moz-radial-gradient(circle, #094E8F, #0C122A);
+	    background: transparent radial-gradient(circle, #094E8F, #0C122A) no-repeat fixed center center / cover;
+
+	    background-attachment: fixed;
+	    background-size: cover;
+	    background-position: center;
+
+	}
+
+	&-rad-grad2{
+	    background: -webkit-radial-gradient(circle, #546076, #423e51);
+	    background: -o-radial-gradient(circle, #546076, #423e51);
+	    background: -moz-radial-gradient(circle, #546076, #423e51);
+	    background: transparent radial-gradient(circle, #546076, #423e51) no-repeat fixed center center / cover;
+	    background-attachment: fixed;
+	    background-size: cover;
+	    background-position: center;
+	}
+	// #grad
+	// $grad-a: rgba(0, 61, 86, 1);
+	// $grad-b: rgba(1, 115, 162, 1);
+	// $grad-c: rgba(50, 213, 234, 1);
+	//
+	// background: $grad-b;
+	// background: linear-gradient(175deg, $grad-a 0%, $grad-b 70%, $grad-c 100%);
+}
+
+.cur-p{cursor: pointer;}
+.cur-mag{cursor: zoom-in;}
+
+
+// #positioning
+/* mater */
+.valign-wrapper{
+	&.btm{
+		align-items: end;
+	}
+	> .col{
+		margin-left: 0 !important;
+	}
+}
+
+img.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.center{
+
+	&-flex{
+		display: flex;
+		align-items: center;
+	}
+	&-abs{
+		&-all-h5{ left:50%; top:50%; transform: translate(-50%, -50%); }
+		&-all{ left: 0; top:0; bottom:0; right: 0; margin: auto !important; }
+		&-v-h5{ top:50%; @include prefix(translate, 0% -50%); }
+		&-h-h5{left:50%; @include prefix(translate, 50% 0%); }
+		&-v{ top:0; bottom:0; margin-top: auto !important; margin-bottom: auto !important; }
+		&-h{margin-right: auto !important; margin-left: auto !important; }
+		}
+	}
+
+
+.abs{ position: absolute;}
+.rel{position: relative;}
+.hide{display: none !important;}
+.fixed{position: fixed !important;}
+.ib{display: inline-block;}
+.overlay{
+	z-index: -1;
+	position:absolute;
+	top:0;
+	left: 0;
+    width:100%;
+    height:100%;
+	&.darken{
+		background: rgba(color(d), .4);
+	}
+}
+
+.fluid{width:100%;}
+.fluid-h{height: 100% !important;}
+
+
+.foo{ width:100px; height:100px; margin:0 auto; border-style:groove;}
+
+.oy{
+
+}
+
+.skin, .no-mp{margin: 0;padding: 0;}
+
+
+
+.scaffold{min-height: 300px;}
+
+// #shadow
+.shadow{
+	box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+	&-no{
+		box-shadow: none !important;
+	}
+	&-inner{
+		box-shadow: inset 0 0 10px #000000;
+	}
+	&-strong{
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+	}
+	&-soft{
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	}
+
+
+	&-blurry{
+		position: relative;
+		&::after{
+			content: '';
+			// box-shadow: 0 0 80px rgba(black, .9);
+			// box-shadow: 0 0 80px rgba(color(d), .9);
+			box-shadow: -10px -10px 100px darken(color(d), 10);
+			// box-shadow:10px 40px 80px rgba(0, 0, 0, 0.9);
+			position: absolute;
+			z-index: -1;
+			width: 95%;
+			height:95%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+		}
+		&-r::after{
+			border-radius: 100%;
+			content: '';
+			box-shadow: 0 0 80px rgba(black, .9);
+			position: absolute;
+			z-index: -1;
+			width: 95%;
+			height:95%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
+
+	&-blurry2{
+		box-shadow: 0 0 70px rgba(black, .5);
+	}
+ // https://css-tricks.com/almanac/properties/b/box-shadow/
+	&-effect5
+	{
+	  position: relative;
+	  box-shadow: none !important;
+
+	  &::before,
+	  &::after{
+		  z-index: -1;
+		  position: absolute;
+		  content: "";
+		  bottom: 25px;
+		  left: 10px;
+		  width: 50%;
+		  top: 80%;
+		  max-width:300px;
+		  background: rgba(nth(color(d), 1), .5);
+
+		  @include prefix(box-shadow, 0 35px 40px rgba(nth(color(d), 1), .7));
+		  @include prefix(transform, rotate(-8deg));
+	  }
+	  &::after
+	  {
+		  @include prefix(transform, rotate(8deg));
+		  right: 10px;
+		  left: auto;
+	  }
+	}
+
+	&-effect6
+	{
+		$x: 10px;
+	  position: relative;
+	  box-shadow: none !important;
+
+	  &::after{
+		  z-index: -1;
+		  position: absolute;
+		  content: "";
+		  bottom: $x;
+		  left: $x;
+		  right: $x;
+		  top: $x;
+		  background: rgba(color(d), .5);
+
+		  @include prefix(box-shadow, 0 0 $x*5 rgba(color(d), 1));
+		  // @include prefix(transform, rotate(-8deg));
+	  }
+	}
+
+
+}
+
+
+//https://css-tricks.com/examples/hrs/
+// #hr
+hr{
+	border: 0; border-bottom: 1px dashed #ccc; background: #999;
+	&.grad{
+		border: 0;
+		height: 1px;
+		width: fibon(100%, -2);
+		background-image: linear-gradient(to right, rgba(color(d), 0), rgba(color(d), 0.75), rgba(color(d), 0));
+	}
+	&.shadow{
+		height: 20px;
+		border: 0;
+		box-shadow: inset 0 -20px 20px -20px rgba(0, 0, 0, 0.5);
+		margin: 0;
+	}
+	&.white{
+		border-top: 1px solid rgba(0, 0, 0, 0.4);
+	}
+	&.inset {
+	    width:80%;
+	    border: 0;
+	    height: 0;
+	    border-top: 1px solid rgba(0, 0, 0, 0.1);
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.3);}
+}
+
+.transition{
+	@include prefix(transition, all 0.4s ease-in-out);
+}
+
+/*FLOATS*/
+.clearfix{
+	clear: both;
+}
+.float{
+	&-l{
+		float: left;
+	}
+	&-r{
+		float: right;
+	}
+	&-r::after, &-l::after{
+		clear:both;
+		display:block;
+		content:"";
+	}
+}
+
+.block{
+	display:block;
+}
+
+.blur-2{
+	@include prefix(filter, blur(2px));
+}
+.blur-10{
+	@include prefix(filter, blur(10px));
+    }
+.blur-30{
+	@include prefix(filter, blur(30px));
+    }
+
+ul{
+	&.hor{
+		> li {
+			float:left;
+		}
+		&-r > li {
+			float: right;
+		}
+
+		&-r::after,
+		&::after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		&-r > li:not(:last-of-type)
+		{
+			margin-left: f(mp, 1);
+
+		}
+		> li:not(:last-of-type)
+		{
+			margin-right: f(mp, 1);
+		}
+	}
+}
+
+// #txt
+.txt-c{text-align: center !important;}
+.txt-l{text-align: left !important;}
+.txt-r{text-align: right !important;}
+
+// .txt-l1{text-align: right !important;}
+
+.capitalize{text-transform: capitalize;}
+.caps{text-transform: uppercase;}
+.lowercase{text-transform: lowercase;}
+
+.justify{
+	text-align: justify;
+	&-ic{
+		@extend .justify;
+		text-justify: inter-character;
+	}
+	&-d{
+		@extend .justify;
+		text-justify: distribute;
+	}
+}
+.nowrap{white-space: nowrap;}
+
+
+.font-thick{
+    -webkit-text-stroke: .4px;
+    text-stroke: .4px;
+}
+
+
+//#marg
+@include init-spacing();
+
+.m{
+	//asd
+	&a{
+		&-l{margin-left: auto ;}
+		&-r{margin-right: auto ;}
+		&-s{margin-left: auto ; margin-right: auto; }
+		&-t{margin-top: auto ;}
+		&-b{margin-bottom: auto ;}
+		&-tb{margin-top: auto ; margin-bottom: auto;}
+		&{margin: auto;}
+	}
+	&-no{margin: 0 !important;}
+	&-not{margin-top: 0 !important; }
+	&-nob{margin-bottom: 0 !important;}
+	&-nol{margin-left: 0 !important;}
+	&-nor{margin-right: 0 !important;}
+}
+
+.p{
+	&-no{padding: 0 !important;}
+	&-not{padding-top: 0;}
+	&-nob{padding-bottom: 0;}
+	&-nol{padding-left: 0;}
+	&-nor{padding-right: 0;}
+}
+
+@include init-s();
+@include colors();

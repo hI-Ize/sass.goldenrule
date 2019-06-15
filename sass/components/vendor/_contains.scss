@@ -1,0 +1,31 @@
+@charset "UTF-8"; /// Checks if a list contains a value(s).
+///
+/// @argument {list} $list
+///   The list to check against.
+///
+/// @argument {list} $values
+///   A single value or list of values to check for.
+///
+/// @return {boolean}
+///
+/// @access private
+@function contains($list, $values, $return_index: false) {
+	$i: 0;
+
+	@each $value in $values {
+
+		@if type-of(index($list, $value)) != "number" {
+			@if($return_index){
+				@return -1;
+			}
+			@return false;
+		}
+		//todo: append & return list
+		$i: index($list, $value);
+
+	}
+	@if($return_index){
+		@return $i;
+	}
+	@return true;
+}

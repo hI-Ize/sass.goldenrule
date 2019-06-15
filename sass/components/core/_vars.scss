@@ -1,0 +1,81 @@
+// @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,500,700');
+//@import url('https://fonts.googleapis.com/css?family=Oswald:500|Quicksand:400,500&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900|Montserrat:400,700,800,900&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700,700i,900&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Limelight&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Chivo:400,700,900&display=swap&subset=latin-ext');
+
+$colors: (
+	light: (white, #D7D8DB, #00719c, #005d52, #5599b1, #0071bc),
+
+	dark: (#313941, #595d65, black, #09485e),
+	contrast: (#e55545, #658d1b, #cb7b39)
+);
+
+
+//font-family: 'Lato', sans-serif;
+
+//font-family: 'Montserrat', sans-serif;
+
+
+// $ff-a: 'Montserrat', sans-serif;
+$ff-a: 'Comfortaa', sans-serif;
+$ff-b: 'Chivo', sans-serif;
+//$ff-b: 'Lato', sans-serif;
+// $ff-b: 'ZillaSlab', sans-serif;
+
+$brez: (
+	bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+	cubic-both: cubic-bezier(0.645, 0.045, 0.355, 1),
+	cubic-out: cubic-bezier(0.215, 0.61, 0.355, 1),
+	cubic-in: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+	expo-out: cubic-bezier(0.95, 0.05, 0.795, 0.035),
+	expo-in: cubic-bezier(0.19, 1, 0.22, 1),
+	back-out: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+	back-in: cubic-bezier(0.6, -0.28, 0.735, 0.045),
+	back-both: cubic-bezier(0.68, -0.55, 0.265, 1.55),
+	quint-both: cubic-bezier(0.86, 0, 0.07, 1),
+	quad-out: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+	quad-both: cubic-bezier(0.455, 0.03, 0.515, 0.955),
+	sine-out: cubic-bezier(0.39, 0.575, 0.565, 1),
+	circ-out: cubic-bezier(0.075, 0.82, 0.165, 1),
+	quart-out: cubic-bezier(0.165, 0.84, 0.44, 1),
+				quart-both: cubic-bezier(0.77, 0, 0.175, 1)
+);
+
+
+
+/*from x the screen is
+			s 		m 		l 		xl*/
+// $screens: 	0 , 	601px, 	993px, 	1201px;
+$screens: 		0, 		768px, 	992px, 	1200;
+//				xs		s		m		l
+
+$media-q: (
+//
+(	//l n up
+	'min-width: ' + (nth($screens, 3)),
+	//m n down
+	'max-width: ' + (nth($screens, 3)-1)
+),
+//??
+(
+	//xl n up
+	'min-width: ' + (nth($screens, 3)),
+	//l only
+	'min-width:' + (nth($screens, 3)) + ') and (max-width: ' + (nth($screens, 4)-1),
+	//m n down
+	'max-width: ' + (nth($screens, 3)-1)
+),
+(
+	//xl n up
+	'min-width: ' + (nth($screens, 4)),
+	//l only
+	'min-width: ' + (nth($screens, 3)) + ') and (max-width: ' + (nth($screens, 4)-1),
+	//m only
+	'min-width: ' + (nth($screens, 2)) + ') and (max-width: ' + (nth($screens, 3)-1) ,
+	//s only
+	'max-width: ' + (nth($screens, 2))
+)
+);

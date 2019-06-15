@@ -1,0 +1,398 @@
+$prefixes: "webkit", "ms";
+@mixin slant($bg: red, $angle: 20deg, $to: -100% 0) {
+	// $classes: 'br', 'tr';
+	// https://stackoverflow.com/questions/25360411/responsive-css-triangle-with-percents-width
+	// position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		// background-color: nth($c-light,  1);
+		background-color: $bg;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		opacity: 1;
+		transform: skewX($angle);
+		transform-origin: $to;
+	}
+}
+// $grad-map:
+// 	(
+// 		(rgba(#028bc1, 1), 0%),
+// 		(rgba(#004059, 1), 50%),
+// 		(rgba(50, 213, 234, 1), 100%),
+// 	);
+@mixin grad-lin($color-map, $deg: 90deg, $img: 0) {
+	$bg-val: '';
+	@if $img != 0 {
+		// @debug 'not 0';
+		$bg-val: $img + ', ';
+	}
+	$bg-val: $bg-val + 'linear-gradient(' + $deg + ',';
+	@for $i from 1 through length($color-map) {
+		$color: nth(nth($color-map, $i), 1);
+		$pos: nth(nth($color-map, $i), 2);
+		$bg-val: $bg-val + $color + ' ' + $pos;
+		@if (length($color-map) > $i) {
+			$bg-val: $bg-val + ', ';
+		} @else {
+			$bg-val: $bg-val + ')';
+		}
+	}
+	background: #{$bg-val};
+}
+@mixin ul-check() {
+	ul.check {
+		> li {
+			padding-bottom: 10px;
+			position: relative;
+		}
+
+		> li::before {
+			content: "\F00C";
+			position: absolute;
+			left: -25px;
+			top: 0;
+			bottom: 0;
+			margin-top: auto;
+			font-size: 10px;
+			margin-right: 10px;
+			color: #58a558;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			margin-bottom: auto;
+			// height: 13px;
+		}
+	}
+}
+@mixin link($color: white) {
+	a:link {
+		// color: pink;
+		color: $color;
+	}
+
+	a:visited {
+		// color: blue;
+		color: $color;
+	}
+
+	a:hover {
+		// color: red;
+		color: $color;
+	}
+
+	a:active {
+		// color: green;
+		color: $color;
+	}
+}
+@mixin mat-push-footer() {
+	body {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+
+		main {
+			flex: 1 0 auto;
+		}
+	}
+}
+@mixin no-js() {
+	html {
+		.no-js {
+			display: none;
+		}
+
+		&.no-js .no-js {
+			display: block;
+		}
+	}
+}
+@mixin prefix($property, $value) {
+	@each $prefix in $prefixes {
+		#{'-' + $prefix + '-' + $property}: $value;
+	}
+	#{$property}: $value;
+}
+// $screens: 600px, 992px, 1200px;
+// @include resp((  ));
+// 	xl l m s
+@mixin resp($properties, $down: true) {
+	@each $prop, $vals in $properties {
+		$l: length($vals);
+		@if ($l < 2) {
+			@error 'a property must have at least 2 values!';
+		}
+		$q: nth($media-q, $l - 1);
+		@for $i from $l through 1 {
+			@media(nth($q, $i)) {
+				#{$prop}: nth($vals, $i);
+			}
+		}
+	}
+}
+// how to triangle
+// 	- below was not working as xpected
+//	- in other helper could predefine classes
+// need btns
+//	must flow w dom
+// & after
+//	absolute
+//2 different type of classes
+//	.tri-point-t -l -r -b
+//	.tri
+@mixin triangle($direction, $width, $height, $color) {
+	@if not index("up" "up-right" "right" "down-right" "down" "down-left" "left" "up-left", $direction) {
+		@error "Direction must be `up`, `up-right`, `right`, `down-right`, " + "`down`, `down-left`, `left` or `up-left`.";
+	} @else
+	if not _is-color($color) {
+		$color: inherit;
+	} @else {
+		border-style: solid;
+		height: 0;
+		width: 0;
+
+		@if $direction == "up" {
+			border-color: transparent transparent $color;
+			border-width: 0 ($width / 2) $height;
+		} @else
+		if $direction == "up-right" {
+			border-color: transparent $color transparent transparent;
+			border-width: 0 $width $width 0;
+		} @else
+		if $direction == "right" {
+			border-color: transparent transparent transparent $color;
+			border-width: ($height / 2) 0 ($height / 2) $width;
+		} @else
+		if $direction == "down-right" {
+			border-color: transparent transparent $color;
+			border-width: 0 0 $width $width;
+		} @else
+		if $direction == "down" {
+			border-color: $color transparent transparent;
+			border-width: $height ($width / 2) 0;
+		} @else
+		if $direction == "down-left" {
+			border-color: transparent transparent transparent $color;
+			border-width: $width 0 0 $width;
+		} @else
+		if $direction == "left" {
+			border-color: transparent $color transparent transparent;
+			border-width: ($height / 2) $width ($height / 2) 0;
+		} @else
+		if $direction == "up-left" {
+			border-color: $color transparent transparent;
+			border-width: $width $width 0 0;
+		}
+	}
+}
+//todo
+//vertical m/p
+//	after 3d limit to x px
+//
+//horizontal
+//	stay %?
+//		should limit that too
+//
+//disable bs gutters by default
+//	will need to set some pad in norm tho on cols tb
+//
+//todo
+// figure out a way to simply scale down till 992
+//	then just display for mobile
+//
+//
+@function resp-logic($value, $i: 0, $dir: x) {
+	//@return $value * .75;
+	@return $value;
+}
+
+@mixin init-s() {
+	$list: map-get($units, s);
+	$length: length($list);
+
+		.h {
+			@for $i from 1 through length($list) {
+				&#{$i} {
+					$s: f(s, $i);
+					//@include resp((height:($s, resp-logic($s))));
+					height: $s;
+					&-lh {
+						//@include resp((height:($s, resp-logic($s)), line-height: ($s, resp-logic($s))));
+						height: $s;
+						line-height: $s;
+
+					}
+				}
+			}
+		}
+
+		.w {
+			@for $i from 1 through length($list) {
+				&#{$i} {
+					$s: f(s, $i);
+					width: $s;
+
+					//@include resp((width:($s, resp-logic($s))));
+				}
+			}
+		}
+}
+@mixin init-spacing() {
+	$list: map-get($units, mp);
+	$classes: (
+		-a: (-top, -right, -bottom, -left),
+		-s: (-left, -right),
+		-tb: (-top, -bottom),
+		-l: -left,
+		-r: -right,
+		-t: -top,
+		-b: -bottom
+	);
+
+	@for $i from 1 through length($list) {
+		.m#{$i} {
+			@each $class, $props in $classes {
+				//todo placeholders to normalize to these
+				&#{$class}{
+					@each $prop in $props {
+						//$u: vw;
+						//// $val: nth($spaces, $i) + 0px;
+						//@if($prop == '-top' or $prop == '-bottom'){
+						//	$u: vh;
+						//}
+						$val: f(mp, $i);
+						// @include resp((margin + $prop: ($val, resp-logic($val))));
+						//@include resp((margin + $prop: ($val, $i+0%)));
+						#{margin+$prop}: $val;
+
+						//&-const {
+						//	#{margin + $prop}: $val;
+						//}
+					}
+				}
+			}
+		}
+
+		.p#{$i} {
+			@each $class, $props in $classes {
+				&#{$class} {
+					@each $prop in $props {
+						//$u: vw;
+						//// $val: nth($spaces, $i) + 0px;
+						//@if($prop == '-top' or $prop == '-bottom'){
+						//	$u: vh;
+						//}
+						$val: f(mp, $i);
+						// @include resp((padding + $prop: ($val, resp-logic($val))));
+						//@include resp((padding + $prop: ($val, $i+0%)));
+						#{padding+$prop}: $val;
+
+						//&-const {
+						//	#{padding + $prop}: $val;
+						//}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin colors() {
+
+	@each $class, $vals in $colors{
+
+		@for $i from 1 through length($vals){
+			$c: $class;
+
+			@if $i > 1 {
+				$c: $class + $i;
+			}
+
+			.#{$c}{
+				color: color($class, $i);
+				fill: color($class, $i);
+
+				svg{
+					fill: color($class, $i);
+				}
+			}
+
+			.bg-#{$c}{
+				background-color: color($class, $i);
+			}
+
+		}
+	}
+}
+
+
+
+@mixin modal(){
+	.modal{
+		position: fixed;
+		overflow-y: scroll;
+		top:0;
+		left: 0;
+		right:0;
+		bottom:0;
+		background: rgba(color(d), .7);
+		z-index: 10000;
+
+		> .modal-body{
+			position: relative;
+			@include resp((
+							width: (fibon(100vw, -1), 100vw)
+
+			));
+			// max-height: 100%;
+			min-height: fibon(100vh, -5);
+			margin:auto;
+			left:0;
+			right:0;
+			top:fibon(100vh, -7);
+			background: color();
+
+			> .modal-imgs{
+				max-height: fibon(100vh, -1);
+				margin-left: - fibon(100vw, -6);
+
+				img{
+					object-fit: cover;
+					max-width: fibon(100vw, -1);
+				}
+			}
+
+			> .btn-x-modal{
+				position: absolute;
+				line-height: f(8);
+				width: f(8);
+				height: f(8);
+				text-align: center;
+				background: rgba(color(d), .2);
+				color: white;
+
+
+				right:0;
+				top:0;
+
+			}
+
+		}
+		// display: none;
+		// width: fibon(100vw, -1);
+
+
+
+	}
+
+	body.modal-open{
+		overflow-y: hidden;
+
+		.modal{
+			// display: block;
+		}
+	}
+}
