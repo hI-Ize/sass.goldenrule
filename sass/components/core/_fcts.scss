@@ -2,6 +2,8 @@
 @import '../vendor/contains';
 @import "../vendor/mathsass-master/dist/math";
 
+
+//#getters
 @function f($item:1, $i:1){
 	$list: $fsq;
 
@@ -55,15 +57,14 @@
 
 	@return $color;
 }
-// #list============================================
+
+//#lists ===============
 @function first($list) {
 	@return nth($list, 1);
 }
 @function last($list) {
 	@return nth($list, length($list));
 }
-//todo: use else than lists
-//check if index/key present in list
 @function exists($list, $i) {
 
 	@if((is-integer($i) and length($list) >= $i) or (not(is-integer($i)) and map-get($list, $i))) {
@@ -124,7 +125,8 @@
 	}
 	@return join((), $result, $separator, $bracketed);
 }
-// #int #numbers============================================
+
+//#numbers=========
 @function is-number($value) {
 	@return type-of($value) == 'number';
 }
@@ -199,7 +201,7 @@
 
 	@return $x;
 }
-//#fool=====================================================
+
 //#fib
 @function get-fsq($interval, $f) {
 	$prev: $f;
@@ -225,6 +227,7 @@
 	@return list-sort($fs);
 }
 
+//convert a list of numbers to their nearest f val
 @function fibonize($targets, $f) {
 	$sq: ();
 
@@ -251,9 +254,8 @@
 	// @return rnd($x * pow($m, abs($steps)), $decimals);
 	@return rnd($x * math-pow($m, abs($steps)), $decimals);
 }
-//#fool=====================================================
 
-//#style=======================================================================
+//#style===============
 @function shade($color, $percent) {
 	@if not _is-color($color) {
 		@error "`#{$color}` is not a valid color for the `$color` argument in " + "the `shade`mixin.";
@@ -261,4 +263,3 @@
 		@return mix(#000, $color, $percent);
 	}
 }
-//#style=======================================================================

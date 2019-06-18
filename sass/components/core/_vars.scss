@@ -1,29 +1,19 @@
-// @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:400,400i,500,700');
-//@import url('https://fonts.googleapis.com/css?family=Oswald:500|Quicksand:400,500&display=swap&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900|Montserrat:400,700,800,900&display=swap&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Muli:400,700,700i,900&display=swap&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Limelight&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Chivo:400,700,900&display=swap&subset=latin-ext');
 
+//classes will be generated ie:
+//	color: .light4 .contrast
+//	bg: .bg-light, .bg-contrast3
+//get colors in sass:
+//	color(d, 4), color(c, 3), color(3) -> lights
 $colors: (
 	light: (white, #D7D8DB, #00719c, #005d52, #5599b1, #0071bc),
-
 	dark: (#313941, #595d65, black, #09485e),
 	contrast: (#e55545, #658d1b, #cb7b39)
 );
 
-
-//font-family: 'Lato', sans-serif;
-
-//font-family: 'Montserrat', sans-serif;
-
-
-// $ff-a: 'Montserrat', sans-serif;
 $ff-a: 'Comfortaa', sans-serif;
 $ff-b: 'Chivo', sans-serif;
-//$ff-b: 'Lato', sans-serif;
-// $ff-b: 'ZillaSlab', sans-serif;
 
 $brez: (
 	bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275),
@@ -42,12 +32,12 @@ $brez: (
 	circ-out: cubic-bezier(0.075, 0.82, 0.165, 1),
 	quart-out: cubic-bezier(0.165, 0.84, 0.44, 1),
 				quart-both: cubic-bezier(0.77, 0, 0.175, 1)
+
 );
 
 
-
 /*from x the screen is
-			s 		m 		l 		xl*/
+				s 		m 		l 		xl*/
 // $screens: 	0 , 	601px, 	993px, 	1201px;
 $screens: 		0, 		768px, 	992px, 	1200;
 //				xs		s		m		l

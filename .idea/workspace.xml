@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37eb485d-30cd-4e35-a1dc-35fdc3b5b314" name="Default Changelist" comment="" />
+    <list default="true" id="37eb485d-30cd-4e35-a1dc-35fdc3b5b314" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/helper.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/helper.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/core/_fcts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/components/core/_fcts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/core/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/components/core/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/core/_norm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/components/core/_norm.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/core/_spacing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/components/core/_spacing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/core/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/components/core/_vars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/helpers/_buttons-list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/helpers/_scales.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/helpers/_text-inputs-list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_border-color.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_border-radius.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_border-style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_border-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_contrast-switch.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_ellipsis.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_font-face.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_font-stacks.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_hide-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_hide-visually.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_margin.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_modular-scale.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_overflow-wrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_padding.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_position.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_prefixer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_shade.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_size.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_strip-unit.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_text-inputs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_timing-functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_tint.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_triangle.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/library/_value-prefixer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/settings/_settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_assign-inputs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_compact-shorthand.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_contrast-ratio.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_directional-property.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_fetch-bourbon-setting.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_font-source-declaration.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_gamma.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_lightness.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/utilities/_unpack-shorthand.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/validators/_contains-falsy.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/validators/_contains.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/validators/_is-color.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/validators/_is-length.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/validators/_is-number.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/components/vendor/bourbon/validators/_is-size.scss" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,109 +69,141 @@
     <session id="1384639110">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.5" value="2" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.5" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
-          <entry key="scss" value="7" />
+          <entry key="css" value="1" />
+          <entry key="html" value="3" />
+          <entry key="md" value="2" />
+          <entry key="scss" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
-          <entry key="SCSS" value="7" />
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="3" />
+          <entry key="Markdown" value="2" />
+          <entry key="SCSS" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="334" />
-          <entry key="scss" value="57" />
+          <entry key="html" value="371" />
+          <entry key="md" value="262" />
+          <entry key="scss" value="1124" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="334" />
-          <entry key="SCSS" value="57" />
+          <entry key="HTML" value="371" />
+          <entry key="Markdown" value="262" />
+          <entry key="SCSS" value="1124" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/app.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/components/core/_fcts.scss">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/components/core/_mixins.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1938" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/components/core/_norm.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-816" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/components/core/_spacing.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-28" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sass/components/core/_vars.scss">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/helper.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51" />
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.29848486">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sass/components/core/_fcts.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3978">
+                  <caret line="234" column="37" selection-start-line="234" selection-start-column="37" selection-end-line="234" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sass/app.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sass/components/core/_spacing.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="153">
+                    <caret line="9" selection-start-line="9" selection-end-line="9" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sass/app.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sass/components/core/_norm.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>$steps</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/sass/components/core/_spacing.scss" />
+        <option value="$PROJECT_DIR$/sass/components/core/_vars.scss" />
+        <option value="$PROJECT_DIR$/sass/components/core/_mixins.scss" />
         <option value="$PROJECT_DIR$/sass/components/core/_fcts.scss" />
         <option value="$PROJECT_DIR$/sass/app.scss" />
+        <option value="$PROJECT_DIR$/sass/components/core/_norm.scss" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -137,12 +226,14 @@
     <option name="width" value="854" />
     <option name="height" value="1017" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,7 +263,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -206,16 +296,19 @@
       <workItem from="1560522250882" duration="1024000" />
       <workItem from="1560601200318" duration="2630000" />
       <workItem from="1560606206297" duration="3027000" />
+      <workItem from="1560680071892" duration="6498000" />
+      <workItem from="1560868445107" duration="2393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6681000" />
+    <option name="totallyTimeSpent" value="15572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25611246" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19315404" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -229,7 +322,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061125" side_tool="true" visible="true" weight="0.3295964" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061125" side_tool="true" weight="0.3295964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -244,45 +337,73 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/sass/helper.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/components/core/_vars.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/components/core/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4369">
+          <caret line="257" column="15" lean-forward="true" selection-start-line="257" selection-start-column="15" selection-end-line="257" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/components/vendor/mathsass-master/dist/_math.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/app.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/components/core/_fcts.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3978">
+          <caret line="234" column="37" selection-start-line="234" selection-start-column="37" selection-end-line="234" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="289">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/helper.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/components/core/_fcts.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/components/core/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1938" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/components/core/_norm.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/components/core/_spacing.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28" />
+        <state relative-caret-position="34">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/components/core/_vars.scss">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/sass/components/core/_norm.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="153">
+            <caret line="9" selection-start-line="9" selection-end-line="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
